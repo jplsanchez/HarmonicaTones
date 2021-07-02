@@ -79,6 +79,8 @@ namespace HarmonicaTones
             InitializeComponent();
         }
 
+        // Loading Form
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             Load_ToneComboBox();
@@ -86,16 +88,28 @@ namespace HarmonicaTones
             
         }
 
+        private void Load_ToneComboBox()
+        {
+            ToneComboBox.DataSource = new BindingSource(Notes, null);
+            ToneComboBox.DisplayMember = "Value";
+            ToneComboBox.ValueMember = "Key";
+            //ToneComboBox.SelectedIndex = 0;
+        }
+
         private void ConfigureLabels()
         {
+            ImageLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             for (int i = 0; i < HARMONICA_HOLES; i++)
             {
+                //Blow
+
                 blowNote_labels.Add(new Label());
                 ImageLayoutPanel.Controls.Add(blowNote_labels[i], i + 1, 0);
 
                 blowNote_labels[i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+                | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
                 blowNote_labels[i].AutoSize = true;
                 blowNote_labels[i].BackColor = System.Drawing.Color.Transparent;
                 blowNote_labels[i].Location = new System.Drawing.Point(83, 0);
@@ -104,18 +118,15 @@ namespace HarmonicaTones
                 blowNote_labels[i].TabIndex = 0;
                 blowNote_labels[i].Text = "label";
                 blowNote_labels[i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                
 
-            }
+                //Draw
 
-            for (int i = 0; i < HARMONICA_HOLES; i++)
-            {
                 drawNote_labels.Add(new Label());
                 ImageLayoutPanel.Controls.Add(drawNote_labels[i], i + 1, 2);
 
                 drawNote_labels[i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+                | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
                 drawNote_labels[i].AutoSize = true;
                 drawNote_labels[i].BackColor = System.Drawing.Color.Transparent;
                 drawNote_labels[i].Location = new System.Drawing.Point(83, 0);
@@ -124,11 +135,12 @@ namespace HarmonicaTones
                 drawNote_labels[i].TabIndex = 0;
                 drawNote_labels[i].Text = "label";
                 drawNote_labels[i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-
             }
+
             UpdateNotes_atHarmonicaLabels();
         }
+
+        // Harmonica Tuning
 
         private void UpdateNotes_atHarmonicaLabels()
         {
@@ -150,14 +162,6 @@ namespace HarmonicaTones
                     }
                 }
             }
-        }
-
-        private void Load_ToneComboBox()
-        {
-            ToneComboBox.DataSource = new BindingSource(Notes, null);
-            ToneComboBox.DisplayMember = "Value";
-            ToneComboBox.ValueMember = "Key";
-            //ToneComboBox.SelectedIndex = 0;
         }
 
         private int TransposeNote(int note, int shift)
@@ -196,9 +200,27 @@ namespace HarmonicaTones
         {
             if (ToneComboBox.SelectedValue.GetType() == typeof(int))
             {
-                int selectedNote = (int) ToneComboBox.SelectedValue;
+                int selectedNote = (int)ToneComboBox.SelectedValue;
                 ChangeHarmonicaTune(harmonica_tune, selectedNote);
             }
         }
+
+        // Scale Marker
+
+        private void ScalePicker()
+        {
+
+        }
+        private void MarkNotesInScale()
+        {
+
+        }
+        private void ChangeLabelColor()
+        {
+
+        }
+
+
+
     }
 }
