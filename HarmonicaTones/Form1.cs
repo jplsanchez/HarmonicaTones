@@ -12,9 +12,11 @@ namespace HarmonicaTones
 {
     public partial class MainForm : Form
     {
+        public const int HARMONICA_HOLES = 10;
+        public int harmonica_tune = 1;
         public List<Label> blowNote_labels = new List<Label>();
         public List<Label> drawNote_labels = new List<Label>();
-        public Dictionary<int, string> Notes = new Dictionary<int, string>() //Translate notes to int
+        public Dictionary<int, string> Notes = new Dictionary<int, string>() //Translate note values to their meaning
         {
             {1, "C"},
             {2, "C#"},
@@ -28,6 +30,21 @@ namespace HarmonicaTones
             {10, "A"},
             {11, "A#"},
             {12, "B"}
+        };
+        public Dictionary<string, int> NotesFromString = new Dictionary<string, int>() //Translate notes strings to their value
+        {
+            {"C", 1},
+            {"C#", 1},
+            {"D", 1},
+            {"D#", 1},
+            {"E", 1},
+            {"F", 1},
+            {"F#", 1},
+            {"G", 1},
+            {"G#", 1},
+            {"A", 1},
+            {"A#", 1},
+            {"B", 1}
         };
         public Dictionary<int, int> BlowNotes = new Dictionary<int, int>() //blow positions to notes
         {
@@ -64,14 +81,14 @@ namespace HarmonicaTones
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            Load_ToneComboBox();
             ConfigureLabels();
             
         }
 
         private void ConfigureLabels()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < HARMONICA_HOLES; i++)
             {
                 blowNote_labels.Add(new Label());
                 ImageLayoutPanel.Controls.Add(blowNote_labels[i], i + 1, 0);
@@ -88,17 +105,10 @@ namespace HarmonicaTones
                 blowNote_labels[i].Text = "label";
                 blowNote_labels[i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 
-                if (BlowNotes.TryGetValue(i + 1, out int Note_asInteger))
-                {
-                    if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
-                    {
-                        blowNote_labels[i].Text = Note_asString;
-                    }
-                    
-                }
+
             }
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < HARMONICA_HOLES; i++)
             {
                 drawNote_labels.Add(new Label());
                 ImageLayoutPanel.Controls.Add(drawNote_labels[i], i + 1, 2);
@@ -115,7 +125,24 @@ namespace HarmonicaTones
                 drawNote_labels[i].Text = "label";
                 drawNote_labels[i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
-                if (DrawNotes.TryGetValue(i + 1, out int Note_asInteger))
+
+            }
+            UpdateNotes_atHarmonicaLabels();
+        }
+
+        private void UpdateNotes_atHarmonicaLabels()
+        {
+            for (int i = 0; i < HARMONICA_HOLES; i++)
+            {
+                if (BlowNotes.TryGetValue(i + 1, out int Note_asInteger))
+                {
+                    if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
+                    {
+                        blowNote_labels[i].Text = Note_asString;
+                    }
+
+                }
+                if (DrawNotes.TryGetValue(i + 1, out Note_asInteger))
                 {
                     if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
                     {
@@ -123,6 +150,14 @@ namespace HarmonicaTones
                     }
                 }
             }
+        }
+
+        private void Load_ToneComboBox()
+        {
+            ToneComboBox.DataSource = new BindingSource(Notes, null);
+            ToneComboBox.DisplayMember = "Value";
+            ToneComboBox.ValueMember = "Key";
+            //ToneComboBox.SelectedIndex = 0;
         }
 
         private int TransposeNote(int note, int shift)
@@ -141,12 +176,29 @@ namespace HarmonicaTones
 
         private int GetShift(int tune, int targetTune)
         {
-            return tune - targetTune;
+            return targetTune - tune;
         }
 
-        private int ChangeHarmonicaTune(string tone)
+        private void ChangeHarmonicaTune(int tune, int targetTune)
         {
-            return 0;
+            int shift = GetShift(tune, targetTune);
+
+            for (int i = 1; i <= HARMONICA_HOLES; i++)
+            {
+                BlowNotes[i] = TransposeNote(BlowNotes[i], shift);
+                DrawNotes[i] = TransposeNote(DrawNotes[i], shift);
+            }
+            this.harmonica_tune = targetTune;
+            UpdateNotes_atHarmonicaLabels();
+        }
+
+        private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ToneComboBox.SelectedValue.GetType() == typeof(int))
+            {
+                int selectedNote = (int) ToneComboBox.SelectedValue;
+                ChangeHarmonicaTune(harmonica_tune, selectedNote);
+            }
         }
     }
 }
