@@ -37,11 +37,9 @@ namespace HarmonicaTones
             this.HarmonicaPicture = new System.Windows.Forms.PictureBox();
             this.MainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ImageLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.B1 = new System.Windows.Forms.Label();
             this.HeaderLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).BeginInit();
             this.MainLayoutPanel.SuspendLayout();
-            this.ImageLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderLayoutPanel
@@ -64,23 +62,13 @@ namespace HarmonicaTones
             // ToneComboBox
             // 
             this.ToneComboBox.FormattingEnabled = true;
-            this.ToneComboBox.Items.AddRange(new object[] {
-            "C",
-            "C#",
-            "D",
-            "D#",
-            "E",
-            "F",
-            "F#",
-            "G",
-            "G#",
-            "A",
-            "A#",
-            "B"});
             this.ToneComboBox.Location = new System.Drawing.Point(3, 3);
             this.ToneComboBox.Name = "ToneComboBox";
             this.ToneComboBox.Size = new System.Drawing.Size(314, 24);
             this.ToneComboBox.TabIndex = 2;
+            this.ToneComboBox.DataSource = new BindingSource(Notes, null);
+            this.ToneComboBox.DisplayMember = "Value";
+            this.ToneComboBox.ValueMember = "Key";
             // 
             // HarmonicaPicture
             // 
@@ -129,7 +117,6 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.172078F));
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.574676F));
-            this.ImageLayoutPanel.Controls.Add(this.B1, 1, 0);
             this.ImageLayoutPanel.Location = new System.Drawing.Point(3, 173);
             this.ImageLayoutPanel.Name = "ImageLayoutPanel";
             this.ImageLayoutPanel.RowCount = 3;
@@ -138,20 +125,6 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.72254F));
             this.ImageLayoutPanel.Size = new System.Drawing.Size(1232, 346);
             this.ImageLayoutPanel.TabIndex = 3;
-            // 
-            // B1
-            // 
-            this.B1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.B1.AutoSize = true;
-            this.B1.BackColor = System.Drawing.Color.Transparent;
-            this.B1.Location = new System.Drawing.Point(83, 0);
-            this.B1.Name = "B1";
-            this.B1.Size = new System.Drawing.Size(101, 92);
-            this.B1.TabIndex = 0;
-            this.B1.Text = "label1";
-            this.B1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -165,8 +138,6 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).EndInit();
             this.MainLayoutPanel.ResumeLayout(false);
-            this.ImageLayoutPanel.ResumeLayout(false);
-            this.ImageLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,6 +149,7 @@ namespace HarmonicaTones
         private TableLayoutPanel MainLayoutPanel;
         private TableLayoutPanel ImageLayoutPanel;
         private Label B1;
+        private Label label1;
     }
 }
 
