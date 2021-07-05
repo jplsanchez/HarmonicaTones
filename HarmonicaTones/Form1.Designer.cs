@@ -34,10 +34,10 @@ namespace HarmonicaTones
         {
             this.HeaderLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ToneComboBox = new System.Windows.Forms.ComboBox();
+            this.ScaleComboBox = new System.Windows.Forms.ComboBox();
             this.HarmonicaPicture = new System.Windows.Forms.PictureBox();
             this.MainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ImageLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
             this.HeaderLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).BeginInit();
             this.MainLayoutPanel.SuspendLayout();
@@ -52,7 +52,7 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.05519F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.94481F));
             this.HeaderLayoutPanel.Controls.Add(this.ToneComboBox, 0, 0);
-            this.HeaderLayoutPanel.Controls.Add(this.label1, 1, 0);
+            this.HeaderLayoutPanel.Controls.Add(this.ScaleComboBox, 1, 0);
             this.HeaderLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HeaderLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.HeaderLayoutPanel.Name = "HeaderLayoutPanel";
@@ -70,6 +70,14 @@ namespace HarmonicaTones
             this.ToneComboBox.Size = new System.Drawing.Size(314, 33);
             this.ToneComboBox.TabIndex = 2;
             this.ToneComboBox.SelectedIndexChanged += new System.EventHandler(this.ToneComboBox_SelectedIndexChanged);
+            // 
+            // ScaleComboBox
+            // 
+            this.ScaleComboBox.FormattingEnabled = true;
+            this.ScaleComboBox.Location = new System.Drawing.Point(323, 3);
+            this.ScaleComboBox.Name = "ScaleComboBox";
+            this.ScaleComboBox.Size = new System.Drawing.Size(456, 33);
+            this.ScaleComboBox.TabIndex = 3;
             // 
             // HarmonicaPicture
             // 
@@ -127,15 +135,6 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.Size = new System.Drawing.Size(1232, 346);
             this.ImageLayoutPanel.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -146,7 +145,6 @@ namespace HarmonicaTones
             this.Text = "Harmonica Tones";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.HeaderLayoutPanel.ResumeLayout(false);
-            this.HeaderLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).EndInit();
             this.MainLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -159,7 +157,7 @@ namespace HarmonicaTones
         private PictureBox HarmonicaPicture;
         private TableLayoutPanel MainLayoutPanel;
         private TableLayoutPanel ImageLayoutPanel;
-        private Label label1;
+        private ComboBox ScaleComboBox;
     }
 }
 

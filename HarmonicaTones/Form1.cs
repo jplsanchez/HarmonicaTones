@@ -1,8 +1,11 @@
-﻿using System;
+﻿using HarmonicaTones.Properties;
+using HarmonicaTones.res;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,7 +77,7 @@ namespace HarmonicaTones
         };
 
         public Scale ActiveScale = new Scale();
-
+        public string scalesPath = @"..\..\res\scales\";
 
         public MainForm()
         {
@@ -103,8 +106,12 @@ namespace HarmonicaTones
             //public Scale ActiveScale = new Scale();
             ConfigureLabels();
             Load_ToneComboBox();
+            Load_ScaleComboBox();
 
             RefreshAll();
+
+            var BFC = new ByteFileCreator("SCALE_NAME");
+            BFC.GenerateScaleByteFile(false);
         }
 
         private void Load_ToneComboBox()
@@ -114,6 +121,20 @@ namespace HarmonicaTones
             ToneComboBox.ValueMember = "Key";
             //ToneComboBox.SelectedIndex = 0;
         }
+
+        private void Load_ScaleComboBox()
+        {
+            string[] Scales = Directory.GetFiles(scalesPath);
+
+            int i = 0;
+            foreach (string item in Scales)
+            {
+                Scales[i] = item.Substring(scalesPath.Length);
+                i++;
+            }
+            ScaleComboBox.DataSource = new BindingSource(Scales, null);
+        }
+
 
         private void ConfigureLabels()
         {
@@ -179,7 +200,7 @@ namespace HarmonicaTones
 
         // General Notes Methods
 
-        private int TransposeNote(int note, int shift)
+        public int TransposeNote(int note, int shift)
         {
             note += shift;
             while (note > 12)
@@ -193,7 +214,7 @@ namespace HarmonicaTones
             return note;
         }
 
-        private int GetShift(int tune, int targetTune)
+        public int GetShift(int tune, int targetTune)
         {
             return targetTune - tune;
         }
@@ -279,6 +300,7 @@ namespace HarmonicaTones
         {
 
         }
+
         private void ScalePicker()
         {
 
