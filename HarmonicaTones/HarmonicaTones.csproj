@@ -83,5 +83,8 @@
   <ItemGroup>
     <None Include="res\Harmonica.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\Major.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
