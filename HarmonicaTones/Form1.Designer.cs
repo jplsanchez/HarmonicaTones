@@ -55,7 +55,7 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.46777F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53222F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 631F));
+            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 635F));
             this.HeaderLayoutPanel.Controls.Add(this.label_HarmonicaTune, 0, 0);
             this.HeaderLayoutPanel.Controls.Add(this.ToneComboBox, 0, 1);
             this.HeaderLayoutPanel.Controls.Add(this.label_ScaleFamily, 1, 0);
@@ -93,7 +93,7 @@ namespace HarmonicaTones
             // label_ScaleFamily
             // 
             this.label_ScaleFamily.AutoSize = true;
-            this.label_ScaleFamily.Location = new System.Drawing.Point(365, 0);
+            this.label_ScaleFamily.Location = new System.Drawing.Point(362, 0);
             this.label_ScaleFamily.Name = "label_ScaleFamily";
             this.label_ScaleFamily.Size = new System.Drawing.Size(77, 25);
             this.label_ScaleFamily.TabIndex = 4;
@@ -102,7 +102,7 @@ namespace HarmonicaTones
             // ScaleComboBox
             // 
             this.ScaleComboBox.FormattingEnabled = true;
-            this.ScaleComboBox.Location = new System.Drawing.Point(482, 45);
+            this.ScaleComboBox.Location = new System.Drawing.Point(478, 45);
             this.ScaleComboBox.Name = "ScaleComboBox";
             this.ScaleComboBox.Size = new System.Drawing.Size(115, 33);
             this.ScaleComboBox.TabIndex = 3;
@@ -111,9 +111,9 @@ namespace HarmonicaTones
             // ScaleNotesComboBox
             // 
             this.ScaleNotesComboBox.FormattingEnabled = true;
-            this.ScaleNotesComboBox.Location = new System.Drawing.Point(365, 45);
+            this.ScaleNotesComboBox.Location = new System.Drawing.Point(362, 45);
             this.ScaleNotesComboBox.Name = "ScaleNotesComboBox";
-            this.ScaleNotesComboBox.Size = new System.Drawing.Size(111, 33);
+            this.ScaleNotesComboBox.Size = new System.Drawing.Size(110, 33);
             this.ScaleNotesComboBox.TabIndex = 6;
             this.ScaleNotesComboBox.SelectedIndexChanged += new System.EventHandler(this.ScaleNotesComboBox_SelectedIndexChanged);
             // 
@@ -149,30 +149,31 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageLayoutPanel.BackgroundImage = global::HarmonicaTones.Properties.Resources.Harmonica;
+            this.ImageLayoutPanel.BackgroundImage = global::HarmonicaTones.Properties.Resources.Harmonica_Bends;
             this.ImageLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ImageLayoutPanel.ColumnCount = 12;
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.493506F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.685065F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.847403F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.36039F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.928572F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.36039F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.847403F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.685065F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.522727F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.441559F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.172078F));
-            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.574676F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.49878F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.69212F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.854589F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.367181F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.935824F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.367181F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.854589F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.69212F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.52965F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.448416F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.179528F));
+            this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.580017F));
             this.ImageLayoutPanel.Location = new System.Drawing.Point(3, 186);
             this.ImageLayoutPanel.Name = "ImageLayoutPanel";
-            this.ImageLayoutPanel.RowCount = 6;
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.87861F));
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.68786F));
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.72254F));
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.ImageLayoutPanel.RowCount = 7;
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.06667F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.06667F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.13333F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.2F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.4F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.6F));
+            this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
             this.ImageLayoutPanel.Size = new System.Drawing.Size(1232, 375);
             this.ImageLayoutPanel.TabIndex = 3;
             // 

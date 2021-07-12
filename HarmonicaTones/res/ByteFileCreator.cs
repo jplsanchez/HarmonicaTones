@@ -9,7 +9,7 @@ namespace HarmonicaTones.res
 {
     class ByteFileCreator
     {
-        string Filename = "Minor";
+        string Filename = "Mixolidio";
         public ByteFileCreator(string filename)
         {
             this.Filename = filename;
@@ -22,10 +22,10 @@ namespace HarmonicaTones.res
                 {
                     1,
                     3,
-                    4,
+                    5,
                     6,
                     8,
-                    9,
+                    10,
                     11
                 };
                 File.WriteAllBytes(@"C:\Users\jpaul\source\repos\jplsanchez\HarmonicaTones\HarmonicaTones\res\scales\" + Filename, Scale);
