@@ -102,5 +102,11 @@
   <ItemGroup>
     <None Include="res\Harmonica.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Harmonica Bends.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Harmonica Bends.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

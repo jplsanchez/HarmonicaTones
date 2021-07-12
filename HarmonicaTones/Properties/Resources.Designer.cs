@@ -78,5 +78,15 @@ namespace HarmonicaTones.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Harmonica_Bends {
+            get {
+                object obj = ResourceManager.GetObject("Harmonica_Bends", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

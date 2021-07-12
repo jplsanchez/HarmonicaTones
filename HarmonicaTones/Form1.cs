@@ -85,7 +85,6 @@ namespace HarmonicaTones
         }
 
         // General Use
-
         private void RefreshAll()
         {
 
@@ -94,18 +93,33 @@ namespace HarmonicaTones
                 int selectedNote = (int)ToneComboBox.SelectedValue;
                 ChangeHarmonicaTune(harmonica_tune, selectedNote);
             }
+
+            if (ScaleComboBox.SelectedValue != null)
+            {
+                ActiveScale.ChangeScale(scalesPath + ScaleComboBox.SelectedValue);
+
+            }
+
+            if (ScaleNotesComboBox.SelectedValue != null)
+            {
+                if (ScaleNotesComboBox.SelectedValue.GetType() == typeof(int))
+                {
+                    int selectedScaleNote = (int)ScaleNotesComboBox.SelectedValue;
+                    ActiveScale.ChangeScaleTone(selectedScaleNote);
+                }
+            }
+            
             MarkNotesInScale(ActiveScale.scale);
             UpdateNotes_atHarmonicaLabels();
-
         }
 
         // Loading Form
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             //public Scale ActiveScale = new Scale();
             ConfigureLabels();
-            Load_ToneComboBox();
+            Load_ComboBox_withNotes(ToneComboBox);
+            Load_ComboBox_withNotes(ScaleNotesComboBox);
             Load_ScaleComboBox();
 
             RefreshAll();
@@ -114,11 +128,11 @@ namespace HarmonicaTones
             BFC.GenerateScaleByteFile(false);
         }
 
-        private void Load_ToneComboBox()
+        private void Load_ComboBox_withNotes(ComboBox cbx)
         {
-            ToneComboBox.DataSource = new BindingSource(Notes, null);
-            ToneComboBox.DisplayMember = "Value";
-            ToneComboBox.ValueMember = "Key";
+            cbx.DataSource = new BindingSource(Notes, null);
+            cbx.DisplayMember = "Value";
+            cbx.ValueMember = "Key";
             //ToneComboBox.SelectedIndex = 0;
         }
 
@@ -134,7 +148,6 @@ namespace HarmonicaTones
             }
             ScaleComboBox.DataSource = new BindingSource(Scales, null);
         }
-
 
         private void ConfigureLabels()
         {
@@ -199,7 +212,6 @@ namespace HarmonicaTones
         }
 
         // General Notes Methods
-
         public int TransposeNote(int note, int shift)
         {
             note += shift;
@@ -220,7 +232,6 @@ namespace HarmonicaTones
         }
 
         // Harmonica Tuning
-
         private void ChangeHarmonicaTune(int tune, int targetTune)
         {
             int shift = GetShift(tune, targetTune);
@@ -255,13 +266,7 @@ namespace HarmonicaTones
             }
         }
 
-        private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshAll();
-        }
-
         // Scale Marker
-
         private void MarkNotesInScale(List<int> scale)
         {
             ClearLabelFormating();
@@ -279,6 +284,23 @@ namespace HarmonicaTones
                     }
                 }
             }
+        }
+
+
+        //Controls Onchanged
+        private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAll();
+        }
+
+        private void ScaleComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAll();
+        }
+
+        private void ScaleNotesComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshAll();
         }
     }
 
@@ -301,9 +323,45 @@ namespace HarmonicaTones
 
         }
 
-        private void ScalePicker()
+        public int GetShift(int tune, int targetTune)
         {
+            return targetTune - tune;
+        }
 
+        public int TransposeNote(int note, int shift)
+        {
+            note += shift;
+            while (note > 12)
+            {
+                note -= 12;
+            }
+            while (note <= 0)
+            {
+                note += 12;
+            }
+            return note;
+        }
+
+
+        public void ChangeScale(string scalePath)
+        {
+            byte[] scaleInByte = File.ReadAllBytes(scalePath);
+            this.scale.Clear();
+
+            foreach (byte note in scaleInByte)
+            {
+                scale.Add(Convert.ToInt32(note));
+            }
+        }
+
+        public void ChangeScaleTone(int targetTone)
+        {
+            int shift = GetShift(1, targetTone);
+
+            for (int i = 0; i < scale.Count; i++)
+            {
+                this.scale[i] = TransposeNote(this.scale[i], shift);
+            }
         }
 
     }
