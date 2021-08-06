@@ -15,41 +15,13 @@ namespace HarmonicaTones
 {
     public partial class MainForm : Form
     {
+        private MusicalNotes Notes = new MusicalNotes();
+
         public const int HARMONICA_HOLES = 10;
         public int harmonica_tune = 1;
         public List<Label> blowNote_labels = new List<Label>();
         public List<Label> drawNote_labels = new List<Label>();
         public List<Label> bendNote_labels = new List<Label>();
-        public Dictionary<int, string> Notes = new Dictionary<int, string>() //Translate note values to their meaning
-        {
-            {1, "C"},
-            {2, "C#"},
-            {3, "D"},
-            {4, "D#"},
-            {5, "E"},
-            {6, "F"},
-            {7, "F#"},
-            {8, "G"},
-            {9, "G#"},
-            {10, "A"},
-            {11, "A#"},
-            {12, "B"}
-        };
-        public Dictionary<string, int> NotesFromString = new Dictionary<string, int>() //Translate notes strings to their value
-        {
-            {"C", 1},
-            {"C#", 1},
-            {"D", 1},
-            {"D#", 1},
-            {"E", 1},
-            {"F", 1},
-            {"F#", 1},
-            {"G", 1},
-            {"G#", 1},
-            {"A", 1},
-            {"A#", 1},
-            {"B", 1}
-        };
         public Dictionary<int, int> BlowNotes = new Dictionary<int, int>() //blow positions to notes
         {
             {1, 1},
@@ -89,7 +61,7 @@ namespace HarmonicaTones
         };
 
 
-        public Scale ActiveScale = new Scale();
+        public Scale HarmonicaScale = new Scale();
         public string scalesPath = @"..\..\res\scales\";
 
         public MainForm()
@@ -109,7 +81,7 @@ namespace HarmonicaTones
 
             if (ScaleComboBox.SelectedValue != null)
             {
-                ActiveScale.ChangeScale(scalesPath + ScaleComboBox.SelectedValue);
+                HarmonicaScale.ChangeScale(scalesPath + ScaleComboBox.SelectedValue);
 
             }
 
@@ -118,11 +90,11 @@ namespace HarmonicaTones
                 if (ScaleNotesComboBox.SelectedValue.GetType() == typeof(int))
                 {
                     int selectedScaleNote = (int)ScaleNotesComboBox.SelectedValue;
-                    ActiveScale.ChangeScaleTone(selectedScaleNote);
+                    HarmonicaScale.ChangeScaleTone(selectedScaleNote);
                 }
             }
             
-            MarkNotesInScale(ActiveScale.scale);
+            MarkNotesInScale(HarmonicaScale.scale);
             UpdateNotes_atHarmonicaLabels();
         }
 
@@ -150,7 +122,7 @@ namespace HarmonicaTones
 
         private void Load_ComboBox_withNotes(ComboBox cbx)
         {
-            cbx.DataSource = new BindingSource(Notes, null);
+            cbx.DataSource = new BindingSource(Notes.NotesCode, null);
             cbx.DisplayMember = "Value";
             cbx.ValueMember = "Key";
             //ToneComboBox.SelectedIndex = 0;
@@ -278,7 +250,7 @@ namespace HarmonicaTones
             {
                 if (BlowNotes.TryGetValue(i + 1, out int Note_asInteger))
                 {
-                    if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
+                    if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
                         blowNote_labels[i].Text = Note_asString;
                     }
@@ -286,7 +258,7 @@ namespace HarmonicaTones
                 }
                 if (DrawNotes.TryGetValue(i + 1, out Note_asInteger))
                 {
-                    if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
+                    if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
                         drawNote_labels[i].Text = Note_asString;
                     }
@@ -394,7 +366,7 @@ namespace HarmonicaTones
             {
                 if (BendNotes.TryGetValue(i + 1, out int Note_asInteger))
                 {
-                    if (Notes.TryGetValue(Note_asInteger, out string Note_asString))
+                    if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
                         bendNote_labels[i].Text = Note_asString;
                     }
