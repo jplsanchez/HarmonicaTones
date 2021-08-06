@@ -58,6 +58,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HarmonicaForm.resx</DependentUpon>
     </Compile>
+    <Compile Include="MainFormDisplay.cs" />
     <Compile Include="MusicalNotes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

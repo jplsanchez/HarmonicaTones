@@ -60,7 +60,7 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.46777F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53222F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 636F));
+            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 637F));
             this.HeaderLayoutPanel.Controls.Add(this.label_HarmonicaTune, 0, 0);
             this.HeaderLayoutPanel.Controls.Add(this.ToneComboBox, 0, 1);
             this.HeaderLayoutPanel.Controls.Add(this.label_ScaleFamily, 1, 0);
@@ -81,7 +81,7 @@ namespace HarmonicaTones
             // 
             this.label_HarmonicaTune.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_HarmonicaTune.AutoSize = true;
-            this.label_HarmonicaTune.Location = new System.Drawing.Point(87, 11);
+            this.label_HarmonicaTune.Location = new System.Drawing.Point(86, 11);
             this.label_HarmonicaTune.Name = "label_HarmonicaTune";
             this.label_HarmonicaTune.Size = new System.Drawing.Size(184, 25);
             this.label_HarmonicaTune.TabIndex = 2;
@@ -91,7 +91,7 @@ namespace HarmonicaTones
             // 
             this.ToneComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ToneComboBox.FormattingEnabled = true;
-            this.ToneComboBox.Location = new System.Drawing.Point(24, 61);
+            this.ToneComboBox.Location = new System.Drawing.Point(23, 65);
             this.ToneComboBox.Name = "ToneComboBox";
             this.ToneComboBox.Size = new System.Drawing.Size(310, 33);
             this.ToneComboBox.TabIndex = 2;
@@ -101,7 +101,7 @@ namespace HarmonicaTones
             // 
             this.label_ScaleFamily.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_ScaleFamily.AutoSize = true;
-            this.label_ScaleFamily.Location = new System.Drawing.Point(377, 11);
+            this.label_ScaleFamily.Location = new System.Drawing.Point(376, 11);
             this.label_ScaleFamily.Name = "label_ScaleFamily";
             this.label_ScaleFamily.Size = new System.Drawing.Size(77, 25);
             this.label_ScaleFamily.TabIndex = 4;
@@ -111,7 +111,7 @@ namespace HarmonicaTones
             // 
             this.ScaleComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleComboBox.FormattingEnabled = true;
-            this.ScaleComboBox.Location = new System.Drawing.Point(477, 61);
+            this.ScaleComboBox.Location = new System.Drawing.Point(476, 65);
             this.ScaleComboBox.Name = "ScaleComboBox";
             this.ScaleComboBox.Size = new System.Drawing.Size(115, 33);
             this.ScaleComboBox.TabIndex = 3;
@@ -121,7 +121,7 @@ namespace HarmonicaTones
             // 
             this.ScaleNotesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleNotesComboBox.FormattingEnabled = true;
-            this.ScaleNotesComboBox.Location = new System.Drawing.Point(361, 61);
+            this.ScaleNotesComboBox.Location = new System.Drawing.Point(360, 65);
             this.ScaleNotesComboBox.Name = "ScaleNotesComboBox";
             this.ScaleNotesComboBox.Size = new System.Drawing.Size(110, 33);
             this.ScaleNotesComboBox.TabIndex = 6;
@@ -194,7 +194,7 @@ namespace HarmonicaTones
             this.menuToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1262, 30);
+            this.menuStrip.Size = new System.Drawing.Size(1262, 28);
             this.menuStrip.TabIndex = 2;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -203,13 +203,13 @@ namespace HarmonicaTones
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tabsToolsToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // tabsToolsToolStripMenuItem
             // 
             this.tabsToolsToolStripMenuItem.Name = "tabsToolsToolStripMenuItem";
-            this.tabsToolsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tabsToolsToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.tabsToolsToolStripMenuItem.Text = "Tabs Tools";
             this.tabsToolsToolStripMenuItem.Click += new System.EventHandler(this.tabsToolsToolStripMenuItem_Click);
             // 
