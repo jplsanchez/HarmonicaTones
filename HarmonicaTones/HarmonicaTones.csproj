@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="HarmonicaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="HarmonicaForm.Designer.cs">
+      <DependentUpon>HarmonicaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.Designer.cs">
+    <Compile Include="HarmonicaForm1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Form1.resx</DependentUpon>
+      <DependentUpon>HarmonicaForm.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,10 +65,11 @@
       <DependentUpon>ResourcesScales.resx</DependentUpon>
     </Compile>
     <Compile Include="res\ByteFileCreator.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Scale.cs" />
+    <EmbeddedResource Include="HarmonicaForm.resx">
+      <DependentUpon>HarmonicaForm.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Form11.Designer.cs</LastGenOutput>
+      <LastGenOutput>HarmonicaForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\ResourcesScales.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,10 +107,10 @@
     <None Include="res\Harmonica.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Harmonica Bends.bmp" />
+    <None Include="res\Resources\Harmonica Bends.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Harmonica Bends.png" />
+    <None Include="res\Resources\Harmonica Bends.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

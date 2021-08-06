@@ -32,6 +32,7 @@ namespace HarmonicaTones
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.HeaderLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.label_HarmonicaTune = new System.Windows.Forms.Label();
             this.ToneComboBox = new System.Windows.Forms.ComboBox();
@@ -41,9 +42,13 @@ namespace HarmonicaTones
             this.HarmonicaPicture = new System.Windows.Forms.PictureBox();
             this.MainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.ImageLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabsToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HeaderLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).BeginInit();
             this.MainLayoutPanel.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderLayoutPanel
@@ -55,7 +60,7 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.46777F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53222F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 635F));
+            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 636F));
             this.HeaderLayoutPanel.Controls.Add(this.label_HarmonicaTune, 0, 0);
             this.HeaderLayoutPanel.Controls.Add(this.ToneComboBox, 0, 1);
             this.HeaderLayoutPanel.Controls.Add(this.label_ScaleFamily, 1, 0);
@@ -69,13 +74,14 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.09756F));
             this.HeaderLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.HeaderLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.HeaderLayoutPanel.Size = new System.Drawing.Size(1232, 177);
+            this.HeaderLayoutPanel.Size = new System.Drawing.Size(1232, 190);
             this.HeaderLayoutPanel.TabIndex = 1;
             // 
             // label_HarmonicaTune
             // 
+            this.label_HarmonicaTune.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_HarmonicaTune.AutoSize = true;
-            this.label_HarmonicaTune.Location = new System.Drawing.Point(3, 0);
+            this.label_HarmonicaTune.Location = new System.Drawing.Point(87, 11);
             this.label_HarmonicaTune.Name = "label_HarmonicaTune";
             this.label_HarmonicaTune.Size = new System.Drawing.Size(184, 25);
             this.label_HarmonicaTune.TabIndex = 2;
@@ -83,8 +89,9 @@ namespace HarmonicaTones
             // 
             // ToneComboBox
             // 
+            this.ToneComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ToneComboBox.FormattingEnabled = true;
-            this.ToneComboBox.Location = new System.Drawing.Point(3, 45);
+            this.ToneComboBox.Location = new System.Drawing.Point(24, 61);
             this.ToneComboBox.Name = "ToneComboBox";
             this.ToneComboBox.Size = new System.Drawing.Size(310, 33);
             this.ToneComboBox.TabIndex = 2;
@@ -92,8 +99,9 @@ namespace HarmonicaTones
             // 
             // label_ScaleFamily
             // 
+            this.label_ScaleFamily.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_ScaleFamily.AutoSize = true;
-            this.label_ScaleFamily.Location = new System.Drawing.Point(362, 0);
+            this.label_ScaleFamily.Location = new System.Drawing.Point(377, 11);
             this.label_ScaleFamily.Name = "label_ScaleFamily";
             this.label_ScaleFamily.Size = new System.Drawing.Size(77, 25);
             this.label_ScaleFamily.TabIndex = 4;
@@ -101,8 +109,9 @@ namespace HarmonicaTones
             // 
             // ScaleComboBox
             // 
+            this.ScaleComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleComboBox.FormattingEnabled = true;
-            this.ScaleComboBox.Location = new System.Drawing.Point(478, 45);
+            this.ScaleComboBox.Location = new System.Drawing.Point(477, 61);
             this.ScaleComboBox.Name = "ScaleComboBox";
             this.ScaleComboBox.Size = new System.Drawing.Size(115, 33);
             this.ScaleComboBox.TabIndex = 3;
@@ -110,8 +119,9 @@ namespace HarmonicaTones
             // 
             // ScaleNotesComboBox
             // 
+            this.ScaleNotesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleNotesComboBox.FormattingEnabled = true;
-            this.ScaleNotesComboBox.Location = new System.Drawing.Point(362, 45);
+            this.ScaleNotesComboBox.Location = new System.Drawing.Point(361, 61);
             this.ScaleNotesComboBox.Name = "ScaleNotesComboBox";
             this.ScaleNotesComboBox.Size = new System.Drawing.Size(110, 33);
             this.ScaleNotesComboBox.TabIndex = 6;
@@ -135,13 +145,13 @@ namespace HarmonicaTones
             this.MainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.MainLayoutPanel.Controls.Add(this.HeaderLayoutPanel, 0, 0);
             this.MainLayoutPanel.Controls.Add(this.ImageLayoutPanel, 0, 1);
-            this.MainLayoutPanel.Location = new System.Drawing.Point(12, 12);
+            this.MainLayoutPanel.Location = new System.Drawing.Point(12, 31);
             this.MainLayoutPanel.Name = "MainLayoutPanel";
             this.MainLayoutPanel.RowCount = 3;
             this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.52595F));
             this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.47404F));
             this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.MainLayoutPanel.Size = new System.Drawing.Size(1238, 649);
+            this.MainLayoutPanel.Size = new System.Drawing.Size(1238, 687);
             this.MainLayoutPanel.TabIndex = 1;
             // 
             // ImageLayoutPanel
@@ -149,7 +159,7 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ImageLayoutPanel.BackgroundImage = global::HarmonicaTones.Properties.Resources.Harmonica_Bends;
+            this.ImageLayoutPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ImageLayoutPanel.BackgroundImage")));
             this.ImageLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ImageLayoutPanel.ColumnCount = 12;
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.49878F));
@@ -164,7 +174,7 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.448416F));
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.179528F));
             this.ImageLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.580017F));
-            this.ImageLayoutPanel.Location = new System.Drawing.Point(3, 186);
+            this.ImageLayoutPanel.Location = new System.Drawing.Point(3, 199);
             this.ImageLayoutPanel.Name = "ImageLayoutPanel";
             this.ImageLayoutPanel.RowCount = 7;
             this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.06667F));
@@ -174,15 +184,43 @@ namespace HarmonicaTones
             this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.4F));
             this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.6F));
             this.ImageLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.ImageLayoutPanel.Size = new System.Drawing.Size(1232, 375);
+            this.ImageLayoutPanel.Size = new System.Drawing.Size(1232, 400);
             this.ImageLayoutPanel.TabIndex = 3;
+            // 
+            // menuStrip
+            // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(1262, 30);
+            this.menuStrip.TabIndex = 2;
+            this.menuStrip.Text = "menuStrip1";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tabsToolsToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 26);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // tabsToolsToolStripMenuItem
+            // 
+            this.tabsToolsToolStripMenuItem.Name = "tabsToolsToolStripMenuItem";
+            this.tabsToolsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.tabsToolsToolStripMenuItem.Text = "Tabs Tools";
+            this.tabsToolsToolStripMenuItem.Click += new System.EventHandler(this.tabsToolsToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1262, 730);
             this.Controls.Add(this.MainLayoutPanel);
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "MainForm";
             this.Text = "Harmonica Tones";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -190,7 +228,10 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HarmonicaPicture)).EndInit();
             this.MainLayoutPanel.ResumeLayout(false);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -204,6 +245,9 @@ namespace HarmonicaTones
         private Label label_HarmonicaTune;
         private Label label_ScaleFamily;
         private ComboBox ScaleNotesComboBox;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem menuToolStripMenuItem;
+        private ToolStripMenuItem tabsToolsToolStripMenuItem;
     }
 }
 
