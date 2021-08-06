@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Harmonica.cs" />
-    <Compile Include="HarmonicaForm.cs">
+    <Compile Include="2 - TabsUtilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HarmonicaForm.Designer.cs">
-      <DependentUpon>HarmonicaForm.cs</DependentUpon>
+    <Compile Include="2 - TabsUtilityForm.Designer.cs">
+      <DependentUpon>2 - TabsUtilityForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HarmonicaForm1.Designer.cs">
+    <Compile Include="Harmonica.cs" />
+    <Compile Include="1 - HarmonicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1 - HarmonicaForm.Designer.cs">
+      <DependentUpon>1 - HarmonicaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1 - HarmonicaForm1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HarmonicaForm.resx</DependentUpon>
+      <DependentUpon>1 - HarmonicaForm.resx</DependentUpon>
     </Compile>
     <Compile Include="MainFormDisplay.cs" />
     <Compile Include="MusicalNotes.cs" />
@@ -69,10 +75,13 @@
     </Compile>
     <Compile Include="res\ByteFileCreator.cs" />
     <Compile Include="Scale.cs" />
-    <EmbeddedResource Include="HarmonicaForm.resx">
-      <DependentUpon>HarmonicaForm.cs</DependentUpon>
+    <EmbeddedResource Include="1 - HarmonicaForm.resx">
+      <DependentUpon>1 - HarmonicaForm.cs</DependentUpon>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>HarmonicaForm1.Designer.cs</LastGenOutput>
+      <LastGenOutput>1 - HarmonicaForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="2 - TabsUtilityForm.resx">
+      <DependentUpon>2 - TabsUtilityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\ResourcesScales.resx">
       <Generator>ResXFileCodeGenerator</Generator>

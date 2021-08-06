@@ -15,11 +15,6 @@ namespace HarmonicaTones
 {
     public partial class MainForm : Form
     {
-        private MusicalNotes Notes = new MusicalNotes();
-
-
-        public string scalesPath = @"..\..\res\scales\";
-
         public MainFormDisplay display = new MainFormDisplay(@"..\..\res\scales\");
 
         public MainForm()
@@ -37,9 +32,6 @@ namespace HarmonicaTones
             display.Load_ScaleComboBox(ScaleComboBox);
 
             RefreshAll();
-
-            var BFC = new ByteFileCreator("Mixolídio");
-            BFC.GenerateScaleByteFile(false);
         }
 
         private void RefreshAll()
@@ -51,10 +43,10 @@ namespace HarmonicaTones
             display.UpdateNotes_atHarmonicaLabels();
         }
 
-
         private void tabsToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm();
+            tabsForm.Show();
         }
 
         private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)
