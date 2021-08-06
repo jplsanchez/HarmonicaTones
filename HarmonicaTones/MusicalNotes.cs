@@ -40,5 +40,23 @@ namespace HarmonicaTones
             {"B", 1}
         };
 
+        public int GetShift(int tune, int targetTune)
+        {
+            return targetTune - tune;
+        }
+
+        public int TransposeNote(int note, int shift)
+        {
+            note += shift;
+            while (note > 12)
+            {
+                note -= 12;
+            }
+            while (note <= 0)
+            {
+                note += 12;
+            }
+            return note;
+        }
     }
 }

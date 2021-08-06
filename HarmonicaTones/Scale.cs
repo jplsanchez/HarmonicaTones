@@ -18,29 +18,7 @@ namespace HarmonicaTones
 
         };
 
-        public Scale()
-        {
-
-        }
-
-        public int GetShift(int tune, int targetTune)
-        {
-            return targetTune - tune;
-        }
-
-        public int TransposeNote(int note, int shift)
-        {
-            note += shift;
-            while (note > 12)
-            {
-                note -= 12;
-            }
-            while (note <= 0)
-            {
-                note += 12;
-            }
-            return note;
-        }
+        public MusicalNotes Notes = new MusicalNotes();
 
         public void ChangeScale(string scalePath)
         {
@@ -55,11 +33,11 @@ namespace HarmonicaTones
 
         public void ChangeScaleTone(int targetTone)
         {
-            int shift = GetShift(1, targetTone);
+            int shift = Notes.GetShift(1, targetTone);
 
             for (int i = 0; i < scale.Count; i++)
             {
-                this.scale[i] = TransposeNote(this.scale[i], shift);
+                this.scale[i] = Notes.TransposeNote(this.scale[i], shift);
             }
         }
 

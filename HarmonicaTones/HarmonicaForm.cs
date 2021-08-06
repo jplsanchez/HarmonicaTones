@@ -17,51 +17,11 @@ namespace HarmonicaTones
     {
         private MusicalNotes Notes = new MusicalNotes();
 
-        public const int HARMONICA_HOLES = 10;
-        public int harmonica_tune = 1;
         public List<Label> blowNote_labels = new List<Label>();
         public List<Label> drawNote_labels = new List<Label>();
         public List<Label> bendNote_labels = new List<Label>();
-        public Dictionary<int, int> BlowNotes = new Dictionary<int, int>() //blow positions to notes
-        {
-            {1, 1},
-            {2, 5},
-            {3, 8},
-            {4, 1},
-            {5, 5},
-            {6, 8},
-            {7, 1},
-            {8, 5},
-            {9, 8},
-            {10, 1}
-        };
-        public Dictionary<int, int> DrawNotes = new Dictionary<int, int>() //draw positions to notes
-        {
-            {1, 3},
-            {2, 8},
-            {3, 12},
-            {4, 3},
-            {5, 6},
-            {6, 10},
-            {7, 12},
-            {8, 3},
-            {9, 6},
-            {10, 10}
-        };
-        public Dictionary<int, int> BendNotes = new Dictionary<int, int>() //draw positions to notes
-        {
-            {1, 2},
-            {2, 7},
-            {3, 6},
-            {4, 11},
-            {5, 10},
-            {6, 9},
-            {7, 2},
-            {8, 9},
-        };
 
-
-        public Scale HarmonicaScale = new Scale();
+        public Harmonica harmonica = new Harmonica();
         public string scalesPath = @"..\..\res\scales\";
 
         public MainForm()
@@ -76,12 +36,12 @@ namespace HarmonicaTones
             if (ToneComboBox.SelectedValue.GetType() == typeof(int))
             {
                 int selectedNote = (int)ToneComboBox.SelectedValue;
-                ChangeHarmonicaTune(harmonica_tune, selectedNote);
+                harmonica.ChangeHarmonicaTune(selectedNote);
             }
 
             if (ScaleComboBox.SelectedValue != null)
             {
-                HarmonicaScale.ChangeScale(scalesPath + ScaleComboBox.SelectedValue);
+                harmonica.HarmonicaScale.ChangeScale(scalesPath + ScaleComboBox.SelectedValue);
 
             }
 
@@ -90,11 +50,11 @@ namespace HarmonicaTones
                 if (ScaleNotesComboBox.SelectedValue.GetType() == typeof(int))
                 {
                     int selectedScaleNote = (int)ScaleNotesComboBox.SelectedValue;
-                    HarmonicaScale.ChangeScaleTone(selectedScaleNote);
+                    harmonica.HarmonicaScale.ChangeScaleTone(selectedScaleNote);
                 }
             }
             
-            MarkNotesInScale(HarmonicaScale.scale);
+            MarkNotesInScale(harmonica.HarmonicaScale.scale);
             UpdateNotes_atHarmonicaLabels();
         }
 
@@ -145,7 +105,7 @@ namespace HarmonicaTones
         {
             ImageLayoutPanel.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular);
 
-            for (int i = 0; i < HARMONICA_HOLES; i++)
+            for (int i = 0; i < harmonica.HARMONICA_HOLES; i++)
             {
                 //Blow
 
@@ -188,7 +148,7 @@ namespace HarmonicaTones
         // Label Format
         private void ClearLabelFormating()
         {
-            for (int i = 0; i < HARMONICA_HOLES; i++)
+            for (int i = 0; i < harmonica.HARMONICA_HOLES; i++)
             {
                 blowNote_labels[i].ForeColor = Color.Gray;
                 blowNote_labels[i].Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular);
@@ -206,49 +166,14 @@ namespace HarmonicaTones
             label.Font = new Font("Microsoft Sans Serif", 12F, fontstyle);
         }
 
-
-        // General Notes Methods
-        public int TransposeNote(int note, int shift)
-        {
-            note += shift;
-            while (note > 12)
-            {
-                note -= 12;
-            }
-            while (note <= 0)
-            {
-                note += 12;
-            }
-            return note;
-        }
-
-        public int GetShift(int tune, int targetTune)
-        {
-            return targetTune - tune;
-        }
-
-
         // Harmonica Tuning
-        private void ChangeHarmonicaTune(int tune, int targetTune)
-        {
-            int shift = GetShift(tune, targetTune);
-
-            for (int i = 1; i <= HARMONICA_HOLES; i++)
-            {
-                BlowNotes[i] = TransposeNote(BlowNotes[i], shift);
-                DrawNotes[i] = TransposeNote(DrawNotes[i], shift);
-            }
-            ChangeBendsInHarmonicaTune(shift);
-
-            this.harmonica_tune = targetTune;
-        }
 
         private void UpdateNotes_atHarmonicaLabels()
         {
             UpdateBendNotes_atLabels();
-            for (int i = 0; i < HARMONICA_HOLES; i++)
+            for (int i = 0; i < harmonica.HARMONICA_HOLES; i++)
             {
-                if (BlowNotes.TryGetValue(i + 1, out int Note_asInteger))
+                if (harmonica.BlowNotes.TryGetValue(i + 1, out int Note_asInteger))
                 {
                     if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
@@ -256,7 +181,7 @@ namespace HarmonicaTones
                     }
 
                 }
-                if (DrawNotes.TryGetValue(i + 1, out Note_asInteger))
+                if (harmonica.DrawNotes.TryGetValue(i + 1, out Note_asInteger))
                 {
                     if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
@@ -266,20 +191,19 @@ namespace HarmonicaTones
             }
         }
 
-
         // Scale Marker
         private void MarkNotesInScale(List<int> scale)
         {
             ClearLabelFormating();
             foreach (int note in scale)
             {
-                for (int i = 0; i < HARMONICA_HOLES; i++)
+                for (int i = 0; i < harmonica.HARMONICA_HOLES; i++)
                 {
-                    if (note == BlowNotes[i + 1])
+                    if (note == harmonica.BlowNotes[i + 1])
                     {
                         ChangeLabelColor(blowNote_labels[i], Color.Red, FontStyle.Bold);
                     }
-                    if (note == DrawNotes[i + 1])
+                    if (note == harmonica.DrawNotes[i + 1])
                     {
                         ChangeLabelColor(drawNote_labels[i], Color.Red, FontStyle.Bold);
                     }
@@ -288,7 +212,6 @@ namespace HarmonicaTones
                 MarkBendNotesInScale(note);
             }
         }
-
 
         //Controls Onchanged
         private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -352,19 +275,11 @@ namespace HarmonicaTones
             bendNote_labels[i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
         }
 
-        private void ChangeBendsInHarmonicaTune(int shift)
-        {
-            for (int i = 1; i <= BendNotes.Count; i++)
-            {
-                BendNotes[i] = TransposeNote(BendNotes[i], shift);
-            }
-        }
-
         private void UpdateBendNotes_atLabels()
         {
-            for (int i = 0; i < BendNotes.Count; i++)
+            for (int i = 0; i < harmonica.BendNotes.Count; i++)
             {
-                if (BendNotes.TryGetValue(i + 1, out int Note_asInteger))
+                if (harmonica.BendNotes.TryGetValue(i + 1, out int Note_asInteger))
                 {
                     if (Notes.NotesCode.TryGetValue(Note_asInteger, out string Note_asString))
                     {
@@ -377,9 +292,9 @@ namespace HarmonicaTones
 
         private void MarkBendNotesInScale(int note)
         {
-            for (int i = 0; i < BendNotes.Count(); i++)
+            for (int i = 0; i < harmonica.BendNotes.Count(); i++)
             {
-                if (note == BendNotes[i + 1])
+                if (note == harmonica.BendNotes[i + 1])
                 {
                     ChangeLabelColor(bendNote_labels[i], Color.Blue, FontStyle.Bold);
                 }
@@ -388,7 +303,7 @@ namespace HarmonicaTones
 
         private void ClearBendLabelFormating()
         {
-            for (int i = 0; i < BendNotes.Count; i++)
+            for (int i = 0; i < harmonica.BendNotes.Count; i++)
             {
                 bendNote_labels[i].ForeColor = Color.Gray;
                 bendNote_labels[i].Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular);
