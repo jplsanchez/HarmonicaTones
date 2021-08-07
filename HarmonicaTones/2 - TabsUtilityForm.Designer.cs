@@ -137,6 +137,7 @@ namespace HarmonicaTones
             this.NotesToTabsButton.TabIndex = 0;
             this.NotesToTabsButton.Text = "Notas ->TAB";
             this.NotesToTabsButton.UseVisualStyleBackColor = true;
+            this.NotesToTabsButton.Click += new System.EventHandler(this.NotesToTabsButton_Click);
             // 
             // InfoLabel
             // 

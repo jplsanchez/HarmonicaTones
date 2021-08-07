@@ -27,17 +27,17 @@ namespace HarmonicaTones
         public Dictionary<string, int> NotesCodeFromString = new Dictionary<string, int>() //Translate notes strings to their value
         {
             {"C", 1},
-            {"C#", 1},
-            {"D", 1},
-            {"D#", 1},
-            {"E", 1},
-            {"F", 1},
-            {"F#", 1},
-            {"G", 1},
-            {"G#", 1},
-            {"A", 1},
-            {"A#", 1},
-            {"B", 1}
+            {"C#", 2},
+            {"D", 3},
+            {"D#", 4},
+            {"E", 5},
+            {"F", 6},
+            {"F#", 7},
+            {"G", 8},
+            {"G#", 9},
+            {"A", 10},
+            {"A#", 11},
+            {"B", 12}
         };
 
         public int GetShift(int tune, int targetTune)
@@ -57,6 +57,19 @@ namespace HarmonicaTones
                 note += 12;
             }
             return note;
+        }
+        public int UpdateNoteCodeFromAccident(int noteCode, char accident)
+        {
+            if (accident == '#')
+            {
+                noteCode = TransposeNote(noteCode, 1);
+            }
+            if (accident == 'b')
+            {
+                noteCode = TransposeNote(noteCode, -1);
+            }
+
+            return noteCode;
         }
     }
 }

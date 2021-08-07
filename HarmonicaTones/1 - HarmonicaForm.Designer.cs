@@ -211,7 +211,7 @@ namespace HarmonicaTones
             this.tabsToolsToolStripMenuItem.Name = "tabsToolsToolStripMenuItem";
             this.tabsToolsToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.tabsToolsToolStripMenuItem.Text = "Tabs Tools";
-            this.tabsToolsToolStripMenuItem.Click += new System.EventHandler(this.tabsToolsToolStripMenuItem_Click);
+            this.tabsToolsToolStripMenuItem.Click += new System.EventHandler(this.TabsToolsMenuItem_Click);
             // 
             // MainForm
             // 

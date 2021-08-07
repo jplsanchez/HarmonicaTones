@@ -43,7 +43,7 @@ namespace HarmonicaTones
             display.UpdateNotes_atHarmonicaLabels();
         }
 
-        private void tabsToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TabsToolsMenuItem_Click(object sender, EventArgs e)
         {
             _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm(display.harmonica);
             tabsForm.StartPosition = FormStartPosition.CenterParent;
