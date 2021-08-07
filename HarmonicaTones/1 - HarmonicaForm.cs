@@ -45,8 +45,10 @@ namespace HarmonicaTones
 
         private void tabsToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm();
-            tabsForm.Show();
+            _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm(display.harmonica);
+            tabsForm.StartPosition = FormStartPosition.CenterParent;
+            tabsForm.Size = this.Size;
+            tabsForm.ShowDialog(this);
         }
 
         private void ToneComboBox_SelectedIndexChanged(object sender, EventArgs e)

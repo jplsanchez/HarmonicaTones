@@ -32,11 +32,11 @@ namespace HarmonicaTones
             this.MainLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tabTextBox = new System.Windows.Forms.TextBox();
             this.bottomLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.CloseButton = new System.Windows.Forms.Button();
+            this.ChangeTuneButton = new System.Windows.Forms.Button();
+            this.TabsToNoteButton = new System.Windows.Forms.Button();
+            this.NotesToTabsButton = new System.Windows.Forms.Button();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.MainLayoutPanel.SuspendLayout();
             this.bottomLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -47,15 +47,17 @@ namespace HarmonicaTones
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.MainLayoutPanel.ColumnCount = 1;
-            this.MainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.MainLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.MainLayoutPanel.Controls.Add(this.tabTextBox, 0, 1);
             this.MainLayoutPanel.Controls.Add(this.bottomLayoutPanel, 0, 2);
+            this.MainLayoutPanel.Controls.Add(this.InfoLabel, 0, 0);
+            this.MainLayoutPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainLayoutPanel.Location = new System.Drawing.Point(2, 1);
             this.MainLayoutPanel.Name = "MainLayoutPanel";
             this.MainLayoutPanel.RowCount = 3;
-            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 608F));
-            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 122F));
+            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.MainLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.MainLayoutPanel.Size = new System.Drawing.Size(1258, 750);
             this.MainLayoutPanel.TabIndex = 0;
             // 
@@ -64,10 +66,11 @@ namespace HarmonicaTones
             this.tabTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabTextBox.Location = new System.Drawing.Point(3, 23);
+            this.tabTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabTextBox.Location = new System.Drawing.Point(3, 40);
             this.tabTextBox.Multiline = true;
             this.tabTextBox.Name = "tabTextBox";
-            this.tabTextBox.Size = new System.Drawing.Size(1252, 602);
+            this.tabTextBox.Size = new System.Drawing.Size(1252, 594);
             this.tabTextBox.TabIndex = 0;
             // 
             // bottomLayoutPanel
@@ -81,69 +84,70 @@ namespace HarmonicaTones
             this.bottomLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.bottomLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.bottomLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.bottomLayoutPanel.Controls.Add(this.button10, 4, 1);
-            this.bottomLayoutPanel.Controls.Add(this.button9, 3, 1);
-            this.bottomLayoutPanel.Controls.Add(this.button8, 2, 1);
-            this.bottomLayoutPanel.Controls.Add(this.button7, 1, 1);
-            this.bottomLayoutPanel.Controls.Add(this.button1, 0, 1);
-            this.bottomLayoutPanel.Location = new System.Drawing.Point(3, 631);
+            this.bottomLayoutPanel.Controls.Add(this.CloseButton, 4, 1);
+            this.bottomLayoutPanel.Controls.Add(this.ChangeTuneButton, 2, 1);
+            this.bottomLayoutPanel.Controls.Add(this.TabsToNoteButton, 1, 1);
+            this.bottomLayoutPanel.Controls.Add(this.NotesToTabsButton, 0, 1);
+            this.bottomLayoutPanel.Location = new System.Drawing.Point(3, 640);
             this.bottomLayoutPanel.Name = "bottomLayoutPanel";
             this.bottomLayoutPanel.RowCount = 3;
-            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.bottomLayoutPanel.Size = new System.Drawing.Size(1252, 116);
+            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.bottomLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.bottomLayoutPanel.Size = new System.Drawing.Size(1252, 107);
             this.bottomLayoutPanel.TabIndex = 1;
             // 
-            // button1
+            // CloseButton
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Location = new System.Drawing.Point(62, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Notas para TAB";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CloseButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.CloseButton.Location = new System.Drawing.Point(1066, 22);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(120, 60);
+            this.CloseButton.TabIndex = 9;
+            this.CloseButton.Text = "Fechar";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // button7
+            // ChangeTuneButton
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.Location = new System.Drawing.Point(319, 41);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(111, 23);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Alterar Tom";
-            this.button7.UseVisualStyleBackColor = true;
+            this.ChangeTuneButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ChangeTuneButton.Location = new System.Drawing.Point(545, 22);
+            this.ChangeTuneButton.Name = "ChangeTuneButton";
+            this.ChangeTuneButton.Size = new System.Drawing.Size(160, 60);
+            this.ChangeTuneButton.TabIndex = 7;
+            this.ChangeTuneButton.Text = "Alterar o Tom";
+            this.ChangeTuneButton.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // TabsToNoteButton
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.Location = new System.Drawing.Point(559, 41);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(131, 23);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "TAB para Notas";
-            this.button8.UseVisualStyleBackColor = true;
+            this.TabsToNoteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.TabsToNoteButton.Location = new System.Drawing.Point(295, 22);
+            this.TabsToNoteButton.Name = "TabsToNoteButton";
+            this.TabsToNoteButton.Size = new System.Drawing.Size(160, 60);
+            this.TabsToNoteButton.TabIndex = 6;
+            this.TabsToNoteButton.Text = "TAB -> Notas";
+            this.TabsToNoteButton.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // NotesToTabsButton
             // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.Location = new System.Drawing.Point(837, 41);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.NotesToTabsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NotesToTabsButton.Location = new System.Drawing.Point(45, 22);
+            this.NotesToTabsButton.Name = "NotesToTabsButton";
+            this.NotesToTabsButton.Size = new System.Drawing.Size(160, 60);
+            this.NotesToTabsButton.TabIndex = 0;
+            this.NotesToTabsButton.Text = "Notas ->TAB";
+            this.NotesToTabsButton.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // InfoLabel
             // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.Location = new System.Drawing.Point(1088, 41);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 9;
-            this.button10.Text = "OK";
-            this.button10.UseVisualStyleBackColor = true;
+            this.InfoLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InfoLabel.Location = new System.Drawing.Point(571, 0);
+            this.InfoLabel.Name = "InfoLabel";
+            this.InfoLabel.Size = new System.Drawing.Size(115, 37);
+            this.InfoLabel.TabIndex = 2;
+            this.InfoLabel.Text = "label1";
             // 
             // _2___TabsUtilityForm
             // 
@@ -153,6 +157,7 @@ namespace HarmonicaTones
             this.Controls.Add(this.MainLayoutPanel);
             this.Name = "_2___TabsUtilityForm";
             this.Text = "Tabs";
+            this.Load += new System.EventHandler(this._2___TabsUtilityForm_Load);
             this.MainLayoutPanel.ResumeLayout(false);
             this.MainLayoutPanel.PerformLayout();
             this.bottomLayoutPanel.ResumeLayout(false);
@@ -165,10 +170,10 @@ namespace HarmonicaTones
         private System.Windows.Forms.TableLayoutPanel MainLayoutPanel;
         private System.Windows.Forms.TextBox tabTextBox;
         private System.Windows.Forms.TableLayoutPanel bottomLayoutPanel;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button CloseButton;
+        private System.Windows.Forms.Button ChangeTuneButton;
+        private System.Windows.Forms.Button TabsToNoteButton;
+        private System.Windows.Forms.Button NotesToTabsButton;
+        private System.Windows.Forms.Label InfoLabel;
     }
 }

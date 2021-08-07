@@ -60,7 +60,7 @@ namespace HarmonicaTones
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 75.46777F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53222F));
             this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 219F));
-            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 542F));
+            this.HeaderLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 543F));
             this.HeaderLayoutPanel.Controls.Add(this.label_HarmonicaTune, 0, 0);
             this.HeaderLayoutPanel.Controls.Add(this.ToneComboBox, 0, 1);
             this.HeaderLayoutPanel.Controls.Add(this.label_ScaleFamily, 1, 0);
@@ -91,7 +91,7 @@ namespace HarmonicaTones
             // 
             this.ToneComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ToneComboBox.FormattingEnabled = true;
-            this.ToneComboBox.Location = new System.Drawing.Point(22, 66);
+            this.ToneComboBox.Location = new System.Drawing.Point(22, 70);
             this.ToneComboBox.Name = "ToneComboBox";
             this.ToneComboBox.Size = new System.Drawing.Size(310, 33);
             this.ToneComboBox.TabIndex = 2;
@@ -101,7 +101,7 @@ namespace HarmonicaTones
             // 
             this.label_ScaleFamily.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label_ScaleFamily.AutoSize = true;
-            this.label_ScaleFamily.Location = new System.Drawing.Point(374, 12);
+            this.label_ScaleFamily.Location = new System.Drawing.Point(373, 12);
             this.label_ScaleFamily.Name = "label_ScaleFamily";
             this.label_ScaleFamily.Size = new System.Drawing.Size(77, 25);
             this.label_ScaleFamily.TabIndex = 4;
@@ -111,7 +111,7 @@ namespace HarmonicaTones
             // 
             this.ScaleComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleComboBox.FormattingEnabled = true;
-            this.ScaleComboBox.Location = new System.Drawing.Point(477, 66);
+            this.ScaleComboBox.Location = new System.Drawing.Point(476, 70);
             this.ScaleComboBox.Name = "ScaleComboBox";
             this.ScaleComboBox.Size = new System.Drawing.Size(205, 33);
             this.ScaleComboBox.TabIndex = 3;
@@ -121,7 +121,7 @@ namespace HarmonicaTones
             // 
             this.ScaleNotesComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ScaleNotesComboBox.FormattingEnabled = true;
-            this.ScaleNotesComboBox.Location = new System.Drawing.Point(358, 66);
+            this.ScaleNotesComboBox.Location = new System.Drawing.Point(357, 70);
             this.ScaleNotesComboBox.Name = "ScaleNotesComboBox";
             this.ScaleNotesComboBox.Size = new System.Drawing.Size(109, 33);
             this.ScaleNotesComboBox.TabIndex = 6;
