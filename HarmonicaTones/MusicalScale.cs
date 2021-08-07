@@ -4,40 +4,35 @@ using System.IO;
 
 namespace HarmonicaTones
 {
-    public class Scale
+    public class MusicalScale
     {
-        public List<int> scale = new List<int>()
+        public List<int> Scale { get; set; }
+        public MusicalNotes Notes { get; set; }
+
+
+        public MusicalScale()
         {
-            1,
-            3,
-            5,
-            6,
-            8,
-            10,
-            12
-
-        };
-
-        public MusicalNotes Notes = new MusicalNotes();
+            Notes = new MusicalNotes();
+            Scale = new List<int>();
+        }
 
         public void ChangeScale(string scalePath)
         {
             byte[] scaleInByte = File.ReadAllBytes(scalePath);
-            this.scale.Clear();
+            this.Scale.Clear();
 
             foreach (byte note in scaleInByte)
             {
-                scale.Add(Convert.ToInt32(note));
+                Scale.Add(Convert.ToInt32(note));
             }
         }
-
         public void ChangeScaleTone(int targetTone)
         {
             int shift = Notes.GetShift(1, targetTone);
 
-            for (int i = 0; i < scale.Count; i++)
+            for (int i = 0; i < Scale.Count; i++)
             {
-                this.scale[i] = Notes.TransposeNote(this.scale[i], shift);
+                this.Scale[i] = Notes.TransposeNote(this.Scale[i], shift);
             }
         }
 

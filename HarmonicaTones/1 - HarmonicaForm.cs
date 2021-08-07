@@ -39,13 +39,13 @@ namespace HarmonicaTones
             display.RefreshToneComboBox(ToneComboBox); 
             display.RefreshScaleComboBox(ScaleComboBox); 
             display.RefreshScaleNotesComboBox(ScaleNotesComboBox); 
-            display.MarkNotesInScale(display.ScaleInPlay.scale);
+            display.MarkNotesInScale(display.Scale.Scale);
             display.UpdateNotes_atHarmonicaLabels();
         }
 
         private void TabsToolsMenuItem_Click(object sender, EventArgs e)
         {
-            _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm(display.harmonica);
+            _2___TabsUtilityForm tabsForm = new _2___TabsUtilityForm(display.Harmonica);
             tabsForm.StartPosition = FormStartPosition.CenterParent;
             tabsForm.Size = this.Size;
             tabsForm.ShowDialog(this);
