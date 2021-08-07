@@ -39,7 +39,7 @@ namespace HarmonicaTones
             display.RefreshToneComboBox(ToneComboBox); 
             display.RefreshScaleComboBox(ScaleComboBox); 
             display.RefreshScaleNotesComboBox(ScaleNotesComboBox); 
-            display.MarkNotesInScale(display.harmonica.HarmonicaScale.scale);
+            display.MarkNotesInScale(display.ScaleInPlay.scale);
             display.UpdateNotes_atHarmonicaLabels();
         }
 

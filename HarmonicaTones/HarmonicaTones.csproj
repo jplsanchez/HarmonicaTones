@@ -106,11 +106,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="res\scales\Blues" />
-    <None Include="res\scales\Major" />
-    <None Include="res\scales\Minor" />
-    <None Include="res\scales\Mixolídio" />
-    <None Include="res\scales\Pentatônica" />
+    <None Include="res\scales\3 - Blues" />
+    <None Include="res\scales\1 - Maior" />
+    <None Include="res\scales\2 - Menor" />
+    <None Include="res\scales\5 - Mixolídio" />
+    <None Include="res\scales\4 - Pentatônica" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

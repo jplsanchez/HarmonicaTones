@@ -51,8 +51,7 @@ namespace HarmonicaTones
             {8, 9},
         };
 
-        public Scale HarmonicaScale = new Scale();
-        public string scalesPath = @"..\..\res\scales\";
+        
 
         public void ChangeHarmonicaTune(int targetTune)
         {

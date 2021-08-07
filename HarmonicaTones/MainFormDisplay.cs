@@ -20,6 +20,8 @@ namespace HarmonicaTones
         public MusicalNotes Notes = new MusicalNotes();
         public Harmonica harmonica = new Harmonica();
 
+        public Scale ScaleInPlay = new Scale();
+
         public MainFormDisplay(string scalesPath)
         {
             ScalesPath = scalesPath;
@@ -103,7 +105,7 @@ namespace HarmonicaTones
         {
             if (ScaleComboBox.SelectedValue != null)
             {
-                harmonica.HarmonicaScale.ChangeScale(ScalesPath + ScaleComboBox.SelectedValue);
+                ScaleInPlay.ChangeScale(ScalesPath + ScaleComboBox.SelectedValue);
 
             }
         }
@@ -116,7 +118,7 @@ namespace HarmonicaTones
                 if (ScaleNotesComboBox.SelectedValue.GetType() == typeof(int))
                 {
                     int selectedScaleNote = (int)ScaleNotesComboBox.SelectedValue;
-                    harmonica.HarmonicaScale.ChangeScaleTone(selectedScaleNote);
+                    ScaleInPlay.ChangeScaleTone(selectedScaleNote);
                 }
             }
         }
