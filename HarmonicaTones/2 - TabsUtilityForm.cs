@@ -19,7 +19,7 @@ namespace HarmonicaTones
         {
             Notes = new MusicalNotes();
             Tab = new TabHandler(tabTextBox.Text);
-            InfoLabel.Text = $"Gaita na afinação de {Notes.NotesCode[Harmonica.Harmonica_tune]}";
+            InfoLabel.Text = $"Gaita na afinação de {Notes.NoteCodeToString(Harmonica.Harmonica_tune)}";
         }
 
         private void CloseButton_Click(object sender, EventArgs e)

@@ -20,20 +20,22 @@ namespace HarmonicaTones
         public string NotesToTabs()
         {
             List<int> codesList = NoteTextToCodes();
+
+            string outputText = "";
             foreach (int code in codesList)
             {
-                ;
+                outputText += Notes.NoteCodeToString(code);
             }
-            return $"{1} ";
+            return outputText;
         }
         private List<int> NoteTextToCodes()
         {
             int index = 0;
             foreach (char character in Text)
             {
-                if (ValidateIfCharIsANote(character))
+                if (Notes.ValidateIfCharIsANote(character))
                 {
-                    int noteCode = Notes.NotesCodeFromString[$"{character}"];
+                    int noteCode = Notes.StringToNoteCode($"{character}");
                     noteCode = CheckandUpdateNoteCodeforAccidents(index, noteCode);
                     NoteCodesList.Add(noteCode);
                 }
@@ -43,26 +45,21 @@ namespace HarmonicaTones
         }
         private int CheckandUpdateNoteCodeforAccidents(int index, int noteCode)
         {
-            if (ValidateIfCharBelongsToAnAccidentNote(index))
+            char accident = GetNextChar(index);
+            if (Notes.ValidateIfCharIsAnAccident(accident))
             {
-                char accident = Text[index + 1];
                 noteCode = Notes.UpdateNoteCodeFromAccident(noteCode, accident);
             }
-
             return noteCode;
         }
-        private bool ValidateIfCharBelongsToAnAccidentNote(int index)
+
+        private char GetNextChar(int index)
         {
             if (Text.Length > index + 1)
             {
-                bool valor = Text[index + 1] == 'b' | Text[index + 1] == '#';
-                return valor;
+                return Text[index + 1];
             }
-            return false;
-        }
-        private bool ValidateIfCharIsANote(char character)
-        {
-            return Notes.NotesCodeFromString.ContainsKey($"{character}");
+            return ' ';
         }
     }
 }

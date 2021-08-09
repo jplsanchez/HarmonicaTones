@@ -5,7 +5,7 @@ namespace HarmonicaTones
     public class MusicalNotes
     {
         public Dictionary<int, string> NotesCode { get; private set; }
-        public Dictionary<string, int> NotesCodeFromString { get; private set; }
+        private Dictionary<string, int> NotesCodeFromString { get; set; }
 
 
         public MusicalNotes()
@@ -72,5 +72,30 @@ namespace HarmonicaTones
 
             return noteCode;
         }
+        public string NoteCodeToString(int code)
+        {
+            if (NotesCode.ContainsKey(code))
+            {
+                return NotesCode[code];
+            }
+            return "";
+        }
+        public int StringToNoteCode(string noteText)
+        {
+            if (NotesCodeFromString.ContainsKey(noteText))
+            {
+                return NotesCodeFromString[noteText];
+            }
+            return 0;
+        }
+        public bool ValidateIfCharIsAnAccident(char charactere)
+        {
+            return charactere == 'b' | charactere == '#';
+        }
+        public bool ValidateIfCharIsANote(char character)
+        {
+            return NotesCodeFromString.ContainsKey($"{character}");
+        }
+
     }
 }
