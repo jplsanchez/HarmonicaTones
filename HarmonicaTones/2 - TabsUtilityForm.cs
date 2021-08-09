@@ -29,8 +29,15 @@ namespace HarmonicaTones
 
         private void NotesToTabsButton_Click(object sender, EventArgs e)
         {
+            Tab = new TabHandler(tabTextBox.Text);
             tabTextBox.Text = Tab.NotesToTabs();
             //throw new NotImplementedException();
+        }
+
+        private void TabsToNoteButton_Click(object sender, EventArgs e)
+        {
+            Tab = new TabHandler(tabTextBox.Text);
+            tabTextBox.Text = Tab.ShowNotesCodesInAText();
         }
     }
 }

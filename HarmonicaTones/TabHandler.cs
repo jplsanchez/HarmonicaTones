@@ -19,15 +19,30 @@ namespace HarmonicaTones
 
         public string NotesToTabs()
         {
+
+            List<int> codesList = NoteTextToCodes();
+            string outputText = "";
+
+            foreach (int code in codesList)
+            {
+                ;
+            }
+            return outputText;
+        }
+
+        public string ShowNotesCodesInAText()
+        {
             List<int> codesList = NoteTextToCodes();
 
             string outputText = "";
             foreach (int code in codesList)
             {
-                outputText += Notes.NoteCodeToString(code);
+                outputText += $"{code} ";
             }
+
             return outputText;
         }
+
         private List<int> NoteTextToCodes()
         {
             int index = 0;

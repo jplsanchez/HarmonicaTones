@@ -121,12 +121,13 @@ namespace HarmonicaTones
             // TabsToNoteButton
             // 
             this.TabsToNoteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TabsToNoteButton.Location = new System.Drawing.Point(295, 22);
+            this.TabsToNoteButton.Location = new System.Drawing.Point(286, 22);
             this.TabsToNoteButton.Name = "TabsToNoteButton";
-            this.TabsToNoteButton.Size = new System.Drawing.Size(160, 60);
+            this.TabsToNoteButton.Size = new System.Drawing.Size(178, 60);
             this.TabsToNoteButton.TabIndex = 6;
-            this.TabsToNoteButton.Text = "TAB -> Notas";
+            this.TabsToNoteButton.Text = "Notas -> Códigos";
             this.TabsToNoteButton.UseVisualStyleBackColor = true;
+            this.TabsToNoteButton.Click += new System.EventHandler(this.TabsToNoteButton_Click);
             // 
             // NotesToTabsButton
             // 
